@@ -1,0 +1,62 @@
+
+<!doctype html>
+<html>
+<head>
+	<title>Reviews Scrapper</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="{{ url_for('static',filename='css/result.css')}}" media="screen" type="text/css" rel="stylesheet" />
+</head>
+<body style="font-family:arial, sans-serif">
+	<a href="{{ url_for('homepage') }}">
+		<img src="{{ url_for('static',filename='images/home.png')}}" class="logo" height="64" width="64">
+	</a>
+    <div id="chart" class="chart"></div>
+    
+	<h2 style="color:black;">User Reviews for {{reviews[0]['Product']}}<tab>
+		<tab>
+			<tab>Total Reviews: {{total_reviews_}}</h2>
+
+		<table class="styled-table">
+			<thead>
+				<tr>
+					<th>
+						<h1>Product</h1>
+					</th>
+					<th>
+						<h1>Name</h1>
+					</th>
+					<th>
+						<h1>Rating</h1>
+					</th>
+					<th>
+						<h1>Summary</h1>
+					</th>
+					<th>
+						<h1>Comment</h1>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				{%for review in reviews%}
+				<tr>
+					<td>{{review.get('Product')}}</td>
+					<td>{{review.get('Name')}}</td>
+					<td>{{review.get('Rating')}}</td>
+					<td>{{review.get('CommentHead')}}</td>
+					<td>{{review.get('Comment')}} </td>
+				</tr>
+				{%endfor%}
+
+			</tbody>
+		</table>
+
+		<a class="gotopbtn" href="#"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+</body>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+    var graphs = {{pie_chart | safe}};
+    Plotly.plot('chart',graphs,{});        
+</script>
+</html>

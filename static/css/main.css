@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+section {
+    position: relative;
+    padding: 100px;
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+header .logo {
+    position: relative;
+    max-width: 80px;
+    height: auto !important;
+}
+
+header ul {
+    position: relative;
+    display: flex;
+
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    display: inline-block;
+    color: #333;
+    font-weight: 400;
+    margin-left: 40px;
+    text-decoration: none;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .textBox {
+    position: relative;
+    max-width: 600px;
+
+}
+
+.content .textBox h2 {
+    color: #333;
+    font-size: 4em;
+    line-height: 1.4em;
+    font-weight: 500;
+}
+
+.content .textBox h2 span {
+    color: #017143;
+    font-size: 1.2em;
+    font-weight: 900;
+
+}
+
+.content .textBox p {
+    color: #333;
+
+}
+
+.content .textBox a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 20px;
+    background: #017143;
+    color: #fff;
+    border-radius: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+
+}
+
+.content .imgBox {
+    width: 600px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    margin-top: 40px;
+
+
+
+}
+
+.content .imgBox img {
+    max-width: 650px;
+
+    border-radius: 1500px;
+
+}
+
+.thumb {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.thumb li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+
+.thumb li:hover {
+    transform: translateY(-15px);
+}
+
+.thumb li img {
+    max-width: 100px;
+
+}
+
+.sci {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.sci li {
+    list-style: none;
+}
+
+.sci li a {
+    display: inline-block;
+    margin: 5px 0;
+    filter: invert(1);
+    transform: scale(.6);
+}
+
+
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #180ed0;
+    clip-path: circle(600px at right 810px);
+}
+
+
+
+form {
+    outline: 0;
+    float: left;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+form>.textbox {
+    outline: 0;
+    height: 42px;
+    width: 244px;
+    line-height: 42px;
+    padding: 0 16px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #212121;
+    border: 0;
+    float: left;
+    -webkit-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+}
+
+form>.textbox:focus {
+    outline: 0;
+    background-color: #FFF;
+}
+
+form>.button {
+    outline: 0;
+    background: none;
+    background-color: rgba(38, 50, 56, 0.8);
+    float: left;
+    height: 42px;
+    width: 42px;
+    text-align: center;
+    line-height: 42px;
+    border: 0;
+    color: #FFF;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 16px;
+    text-rendering: auto;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    -webkit-transition: background-color .4s ease;
+    transition: background-color .4s ease;
+    -webkit-border-radius: 0 4px 4px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+form>.button:hover {
+    background-color: rgba(0, 150, 136, 0.8);
+}
+
+
+@media (max-width:991px) {
+    header {
+        padding: 20px;
+    }
+
+    header .logo {
+        max-width: 60px;
+    }
+
+    header ul {
+        display: none;
+    }
+
+    header ul.navigation.active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #fff;
+        z-index: 10;
+    }
+
+    header ul li a {
+
+        font-size: 1.5em;
+        font-weight: bold;
+        margin: 20px 0;
+
+    }
+
+
+
+
+    .toggle {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background: url(../images/menu.png);
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: invert(1);
+        z-index: 11;
+    }
+
+
+    .toggle.active {
+        position: fixed;
+        right: 20px;
+        background: url(../images/close.png);
+        background-size: 25px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+
+    section {
+        padding: 20px 20px 120px;
+    }
+
+    .content {
+        flex-direction: column;
+        margin-top: 100px;
+
+    }
+
+    .content .textBox h2 {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+    }
+
+    .content .textbox {
+        max-width: 100%;
+
+    }
+
+    .content .imgBox {
+        max-width: 100%;
+        justify-content: center;
+
+    }
+
+    .content .imgBox img {
+        max-width: 300px;
+    }
+
+    .thumb li img {
+        max-width: 90px;
+    }
+
+    .sci {
+        background: #00ff11;
+        right: 0;
+        width: 50px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        filter: invert(-1);
+
+
+    }
+
+
+    .circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #180ed0;
+        clip-path: circle(400px at center bottom);
+    }
+
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css')}}">
+    <title>Home</title>
+</head>
+
+<body>
+
+    <section>
+        <div class="circle"></div>
+        <header>
+            <a href="{{ url_for('homepage') }}">
+                <img src="{{ url_for('static',filename='images/home.png')}}" class="logo">
+            </a>
+            <div class="toggle" onclick="toggleMenu();"></div>
+
+            <ul class="navigation">
+
+                <li>
+
+                    <form action='/scrap' method="POST">
+                        <input type="text" class="textbox" placeholder="Search" name="search_content"
+                            id="search_content">
+                        <input title="Search" value="&#x1F50D" type="submit" class="button">
+                    </form>
+                </li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Buying a product,<br>Found the<span> Correct one ?</span></h2>
+                <p>
+                    Here's what you need to know before buying a product. Go ahead to search for a product, get insights
+                    with <b>Customer Reviews</b> , <b>Total-Rating</b> , With detailed <b>Graphical Representaion</b>.
+                </p>
+                <br>
+                <form action='/scrap' method="POST">
+                    <input type="text" class="textbox" placeholder="Search" name="search_content" id='search_content'>
+                    <input title="Search" value="&#x1F50D" type="submit" class="button">
+                </form>
+                </li>
+            </div>
+
+            <div class="imgBox">
+                <img src="{{ url_for('static',filename='images/data.png')}}" class='scrapper'>
+            </div>
+        </div>
+        <ul class='sci'>
+            <li><a href="https://github.com/Anil-45"><img src="{{ url_for('static',filename='images/github.png')}}" height="64" width="64"></a>
+            </li>
+            <li><a href="https://www.linkedin.com/in/vv-anil-reddy/"><img
+                        src="{{ url_for('static',filename='images/linkedin.png')}}"></a></li>
+        </ul>
+    </section>
+    <script type='text/javascript'>
+        function imgSlider(anything) {
+            document.querySelector('.scrapper').src = anything;
+        }
+        function changeCircleColur(color) {
+            const circle = document.querySelector('.circle')
+            circle.style.background = color;
+        }
+
+        function toggleMenu() {
+            var menuToggle = document.querySelector('.toggle');
+            var navigation = document.querySelector('.navigation')
+            menuToggle.classList.toggle('active')
+            navigation.classList.toggle('active')
+        }
+
+    </script>
+
+
+</body>
+
+</html>
