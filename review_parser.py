@@ -138,9 +138,12 @@ class ReviewParser:
             str: json data
         """
         labels = ["5 ⭐", "4 ⭐", "3 ⭐", "2 ⭐", "1 ⭐"]
-        values = []
+        values = [0, 0, 0, 0, 0]
         for review in self.__all_reviews:
-            values.append(review[1])
+            try:
+                values[5 - int(review[1])] += 1
+            except IndexError as index_error:
+                self.__logger.exception(str(index_error))
         data = go.Figure(
             data=[
                 go.Pie(
