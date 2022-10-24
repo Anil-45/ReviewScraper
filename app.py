@@ -7,7 +7,8 @@ from flask_cors import cross_origin
 from database import DataBase
 from logger import AppLogger
 from review_parser import ReviewParser
-
+from read_config import read_config
+from generate_config import CONFIG_FILE, DATABASE, HOST, USERNAME, PASSWORD
 
 app = Flask(__name__)
 
@@ -30,7 +31,11 @@ def scrap():
         try:
             review_parser_obj = ReviewParser()
             database_obj = DataBase()
-            database_obj.db_connect()
+            config = read_config(CONFIG_FILE)
+            host = config[DATABASE][HOST]
+            user_name = config[DATABASE][USERNAME]
+            password = config[DATABASE][PASSWORD]
+            database_obj.db_connect(host=host, user=user_name, passwd=password)
             reviews = review_parser_obj.fetch_all_reviews(
                 product_to_search=search, database=database_obj
             )

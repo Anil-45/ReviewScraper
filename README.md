@@ -38,7 +38,23 @@ pip install -r Requirements.txt
 
 
 ## Usage
-Example usage:
+To use SQL database, generate a config file using `generate_config.py`.
+
+Open `generate_config.py` and edit host, username and password.
+```sh
+config_file.set(DATABASE, HOST, "127.0.0.1")
+config_file.set(DATABASE, USERNAME, "root")
+config_file.set(DATABASE, PASSWORD, "root")
+```
+Once you are done editing, run:
+```bash
+python generate_config.py
+```
+Alternatively, you can also edit `config.ini`. 
+
+You can run the project without a database also, but the results for the products will always be scraped.
+
+Run the app:
 
 ```bash
 python app.py
@@ -50,7 +66,7 @@ You can find all the logs in `.log` files
 
 ## Room for Improvement
 - Add support for different databases.
-- Add config file for database credentials.
+
 
 ## Contact
 Created by [@Anil_Reddy](https://github.com/Anil-45/) 
